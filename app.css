@@ -1,6 +1,6 @@
 :root {
 	background-color: #ecf5ff;
-	font-size: 65%;
+	font-size: 60%;
 }
 
 * {
@@ -14,6 +14,7 @@
 h1 {
 	color: #56a5eb;
 	font-size: 5rem;
+	margin-bottom: 2.5rem;
 }
 
 .container {
@@ -24,13 +25,14 @@ h1 {
 	align-items: center;
 	max-width: 70rem;
 	margin: 0 auto;
+	padding: 1rem;
 }
 
 .container > * {
 	width: 100%;
 }
 
-#home {
+.homepage {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -46,6 +48,7 @@ h1 {
 	text-decoration: none;
 	background-color: white;
 	border: 0.1rem solid #56a5eb;
+	margin-bottom: 1.5rem;
 }
 
 .button:hover {
@@ -53,4 +56,64 @@ h1 {
 	box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 	transform: translateY(-0.2rem);
 	transition: transform 120s;
+}
+
+/*The game page*/
+
+.game {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.option-container {
+	width: 100%;
+	font-size: 1.5rem;
+	border: 0.1rem solid #56a5eb;
+	display: flex;
+	background-color: white;
+	margin-bottom: 1.5rem;
+}
+
+.option-container:hover {
+	cursor: pointer;
+	box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+	transform: translateY(-0.2rem);
+	transition: transform 120s;
+}
+
+#question {
+	font-size: 4em;
+}
+
+.option-letter {
+	padding: 1.5rem 2.5rem;
+	background-color: #56a5eb;
+	color: white;
+}
+
+.option-text {
+	width: 100%;
+	padding: 1.5rem;
+}
+
+.correct {
+	background-color: lightgreen;
+}
+
+.incorrect {
+	background-color: red;
+}
+
+.scoredisplay {
+	display: flex;
+	justify-content: space-between;
+}
+
+.item p {
+	text-align: center;
+	font-size: 2rem;
 }
