@@ -111,9 +111,22 @@ h1 {
 .scoredisplay {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .item p {
 	text-align: center;
 	font-size: 2rem;
+}
+
+.progress-bar {
+	width: 15rem;
+	height: 2rem;
+	border: 2px solid #56a5eb;
+}
+
+.questionCounter {
+	height: 1.8rem;
+	background-color: #56a5eb;
+	width: 0%;
 }

@@ -56,6 +56,7 @@ const selectNewQuestion = () => {
 	questionCounter++;
 	// Update the question counter display
 	questionCounterDisplay.innerText = `${questionCounter}/${maxQuestions}`;
+	questionCounterDisplay.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 
 	// Select a random question from the available question array
 	questionIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -102,7 +103,7 @@ for (let option of options) {
 		}, 1000)
 
 		if (classToApply === "correct") {
-			incrementScore(questionBonus);
+			incrementScore(questionBonus); 
 		}
 
 		selectNewQuestion();
