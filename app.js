@@ -50,10 +50,15 @@ const startGame = () => {
 
 const selectNewQuestion = () => {
 	if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
+
+		// Save the score of the user to local storage
+		localStorage.setItem("recentScore", score);
+
 		// finish the game
 		return window.location.assign('finish.html');
 	}
 	questionCounter++;
+
 	// Update the question counter display
 	questionCounterDisplay.innerText = `${questionCounter}/${maxQuestions}`;
 	questionCounterDisplay.style.width = `${(questionCounter / maxQuestions) * 100}%`;
