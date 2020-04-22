@@ -4,36 +4,40 @@
 	<meta charset="utf-8">
 	<title>Test Your Knowledge</title>
 	<link rel="stylesheet" type="text/css" href="app.css">
+	<link rel="stylesheet" type="text/css" href="game.css">
+
 </head>
 <body>
 	<div class="container">
 		<section class="game">
 			<div class="scoredisplay">
 				<div class="item">
-					<p>Question</p>
-					<div class="progress-bar"><div class="questionCounter"></div></div>
+					<div class="question">Question <p class="questionCounter"></div></p>
+					<div class="progress-bar"><div class="question-progress"></div></div>
 				</div>
 				<div class="item">
 					<p>Score</p>
 					<h1 class="text score">0</h1>
 				</div>
 			</div>
-			<h1 id="question">What is the name of the question</h1>
-			<article class="option-container">
-				<p class="option-letter">A</p>
-				<p class="option-text" data-number="1">Option 1</p>
-			</article>
-			<article class="option-container">
-				<p class="option-letter">B</p>
-				<p class="option-text" data-number="2">Option 2<p>
-			</article>
-			<article class="option-container">
-				<p class="option-letter">C</p>
-				<p class="option-text" data-number="3">Option 3</p>
-			</article>
-			<article class="option-container">
-				<p class="option-letter">D</p>
-				<p class="option-text" data-number="4">Option 4</p>
+			<article class="current-question">
+				<h1 id="question">What is the name of the question</h1>
+				<article class="option-container">
+					<p class="option-letter">A</p>
+					<p class="option-text" data-number="1">Option 1</p>
+				</article>
+				<article class="option-container">
+					<p class="option-letter">B</p>
+					<p class="option-text" data-number="2">Option 2<p>
+				</article>
+				<article class="option-container">
+					<p class="option-letter">C</p>
+					<p class="option-text" data-number="3">Option 3</p>
+				</article>
+				<article class="option-container">
+					<p class="option-letter">D</p>
+					<p class="option-text" data-number="4">Option 4</p>
+				</article>
 			</article>
 		</section>
 	</div>

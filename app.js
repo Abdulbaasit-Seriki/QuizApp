@@ -99,7 +99,7 @@ const selectNewQuestion = () => {
 
 	// Update the question counter display
 	questionCounterDisplay.innerText = `${questionCounter}/${maxQuestions}`;
-	questionCounterDisplay.style.width = `${(questionCounter / maxQuestions) * 100}%`;
+	document.querySelector(".question-progress").style.width = `${(questionCounter / maxQuestions) * 100}%`;
 
 	// Select a random question from the available question array
 	questionIndex = Math.floor(Math.random() * availableQuestions.length)
