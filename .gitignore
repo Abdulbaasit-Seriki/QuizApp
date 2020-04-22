@@ -1,2 +1,4 @@
 # Ignore the server.js file
 server.*
+*.png
+*.jpg
