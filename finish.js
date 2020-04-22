@@ -18,8 +18,8 @@ saveScoreButton.addEventListener("click", event => {
 	event.preventDefault();
 	
 	const score = {
-		score: playerScore;
-		name: playerName;
+		score: playerScore,
+		name: playerName.value
 	};
 	highScores.push(score);
 	// Sort the the scores from highest to lowest
@@ -28,5 +28,7 @@ saveScoreButton.addEventListener("click", event => {
 	highScores.splice(10);
 
 	localStorage.setItem("highScores", JSON.stringify(highScores));
-	window.location.assign('/index.html')
+	window.location.assign('/leaderboard.html');
 });
+
+// export let name = playerName.value;

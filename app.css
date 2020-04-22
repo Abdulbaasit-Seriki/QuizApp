@@ -1,6 +1,6 @@
 :root {
 	background-color: #ecf5ff;
-	font-size: 60%;
+	font-size: 62.5%;
 }
 
 * {
@@ -160,3 +160,22 @@ input:focus {
 	border: border: 2px solid #56a5eb;;
 }
 
+/*The leaderboard page*/
+
+.leaderboard {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.playerName, .playerScore {
+	font-size: 1.5rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+
+.high-score-member {
+	background-color: lightgreen;
+	border: 2px solid green;
+}
