@@ -1,10 +1,11 @@
 :root {
-	background-color: #ecf5ff;
+	background-color: background-color: rgb(20, 26, 51);
 	font-size: 62.5%;
 }
 
 
 * {
+	background-color: background-color: rgb(20, 26, 51);
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, san-serif;
 	margin: 0;
@@ -209,7 +210,28 @@ input:focus {
 }
 
 /*Media Queries*/
-@media screen and (min-width: 200px) {
+/*Media Queries*/
+@media screen and (max-width: 700px) {
+	* {
+		font-size: 62.5%;
+	}
+	.container {
+		max-width: 70rem;
+	}
+	.option-container {
+		padding: 1rem;
+		margin: 2rem 0;
+	}
+	.question  *{
+		font-size: 5rem;
+	}
+		#question {
+		font-size: 5rem;
+		margin-bottom: 5rem;
+	}
+}
+
+@media screen and (min-width: 400px) {
 	* {
 		font-size: 100%;
 	}
@@ -233,26 +255,5 @@ input:focus {
 	}
 	.question *{
 		font-size: 7rem;
-	}
-}
-
-
-@media screen and (min-width: 600px) {
-	* {
-		font-size: 62.5%;
-	}
-	.container {
-		max-width: 70rem;
-	}
-	.option-container {
-		padding: 1rem;
-		margin: 2rem 0;
-	}
-	.question  *{
-		font-size: 5rem;
-	}
-		#question {
-		font-size: 5rem;
-		margin-bottom: 5rem;
 	}
 }
