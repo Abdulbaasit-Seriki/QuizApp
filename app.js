@@ -12,33 +12,7 @@ let questionCounter = 0;
 const questionBonus = 10;
 const maxQuestions = 10;
 
-// const questions = [
-// 	{
-// 		question: "What is the name of Colt's dog in The Web Development Bootcamp",
-// 		option1: "Pola",
-// 		option2: "Rusty",
-// 		option3: "Bingo",
-// 		option4: "Kola",
-// 		correctOption: 2
-// 	},
-// 	{
-// 		question: "Who killed Thanos in Avengers: Endgame",
-// 		option1: "Tony Stark(Iron Man)",
-// 		option2: "Thor",
-// 		option3: "Captain America",
-// 		option4: "Nebula",
-// 		correctOption: 2
-// 	},
-// 	{
-// 		question: "Why is Orange the New Black",
-// 		option1: "HIMYM",
-// 		option2: "Westworld",
-// 		option3: "Veep",
-// 		option4: "Ozark",
-// 		correctOption: 3
-// 	},
-// ];
-
+// Functions
 const fetchQuestions = async () => {
 	let response, data;
 	try {
@@ -53,7 +27,7 @@ const fetchQuestions = async () => {
 
 	try {
 		data =  await response.json();
-		// Formats the question to my prffered question format
+		// Formats the question to my preffered question format
 		questions = data.results.map( question => {
 			const correctQuestionFormat = {
 				question: question.question
@@ -66,7 +40,6 @@ const fetchQuestions = async () => {
 			questionOptions.forEach((option, index) => {
 				correctQuestionFormat["option" + (index + 1)] = option;
 			});
-			console.log(correctQuestionFormat);
 			return correctQuestionFormat;
 		});
 		startGame();
@@ -80,6 +53,14 @@ const fetchQuestions = async () => {
 const startGame = () => {
 	// reset all the game parameters
 	availableQuestions = [...questions];
+	// Creates a long lines for each questions
+	availableQuestions.forEach( question => {
+		const span = document.createElement("span");
+		span.classList.add("question-progress");
+		const width = document.querySelector(".scoredisplay").style.width;
+		span.style.width = `${(width / maxQuestions)}%`;
+		document.querySelector(".question-progress-bar").append(span);
+	});
 	score = 0;
 	questionCounter = 0;
 	// Pick a new question from the array of questions
@@ -99,7 +80,7 @@ const selectNewQuestion = () => {
 
 	// Update the question counter display
 	questionCounterDisplay.innerText = `${questionCounter}/${maxQuestions}`;
-	document.querySelector(".question-progress").style.width = `${(questionCounter / maxQuestions) * 100}%`;
+	// document.querySelector(".question-progress").style.width = `${(questionCounter / maxQuestions) * 100}`%
 
 	// Select a random question from the available question array
 	questionIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -121,7 +102,7 @@ const selectNewQuestion = () => {
 
 const incrementScore = x => {
 	score += x;
-	scoreDisplay.innerText = score;
+	// scoreDisplay.innerText = score;
 }
 
 fetchQuestions();
@@ -136,8 +117,6 @@ for (let option of options) {
 	}
 		permitToAnswerQuestion = false;
 		const selectedOption = event.target.dataset["number"];
-
-		console.log(currentQuestion.correctOption);
 
 		const classToApply = selectedOption == currentQuestion.correctOption ? "correct" : "incorrect";
 		event.target.parentElement.classList.add(classToApply);

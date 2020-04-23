@@ -66,8 +66,8 @@ h1 {
 /*The game page*/
 
 .game {
-	height: 100vh;
-	display: grid;
+	height: 50vh;
+	display: flex;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 80px 1fr;
 	grid-gap: 20px;
@@ -85,9 +85,9 @@ h1 {
 .option-container {
 	width: 100%;
 	font-size: 1.5rem;
-	border: 0.2rem solid rgba(43, 48, 71);
+	border: 0.2rem solid rgba(170, 173, 186);
+	border-radius: 8px;
 	display: flex;
-	background-color: rgba(20,26,51 0.4);
 	margin-bottom: 1.5rem;
 }
 
@@ -99,8 +99,8 @@ h1 {
 }
 
 #question {
-	color: rgb(174, 176, 181);
-	font-size: 4em;
+	color: rgb(215, 217, 223);
+	font-size: 4rem;
 }
 
 .option-letter {
@@ -117,36 +117,46 @@ h1 {
 }
 
 .correct {
-	background-color: lightgreen;
+	border: 2px solid rgb(12, 162, 7);
 }
 
 .incorrect {
-	background-color: red;
+	border: 2px solid rgb(12, 162, 7);
 }
 
 .scoredisplay {
 	grid-column: 1/-1;
 	grid-row: 1/2;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	width: 100%;
 }
 
-.item p {
+/*.question span {
 	text-align: center;
 	font-size: 2rem;
+}*/
+
+.question * {
+	font-size: 4rem;
+	margin-bottom: 0.5rem;
+	font-weight: normal;
+	color: #d7dbdf;
 }
 
-.progress-bar {
+/*.progress-bar {
 	width: 15rem;
 	height: 2rem;
 	border: 2px solid #56a5eb;
-}
+}*/
 
 .question-progress {
-	height: 1.8rem;
+	display: inline-block;
+	height: 0.3rem;
 	background-color: #56a5eb;
-	width: 0%;
+	/*width: 2%;*/
+	margin: 0 2px;
+
 }
 
 /*End Page */
@@ -196,4 +206,53 @@ input:focus {
 .high-score-member {
 	background-color: lightgreen;
 	border: 2px solid green;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 200px) {
+	* {
+		font-size: 100%;
+	}
+	.container {
+		height: 100vh;
+		padding: 3rem;
+		width: 100vw;
+		max-width: 90%;
+		font-size: 10rem;
+	}
+	.option-container {
+		padding: 3rem;
+		margin: 5rem 0 ;
+	}
+	.option-text {
+		font-size: 5rem;
+	}
+	#question {
+		font-size: 8rem;
+		margin-bottom: 10rem;
+	}
+	.question *{
+		font-size: 7rem;
+	}
+}
+
+
+@media screen and (min-width: 600px) {
+	* {
+		font-size: 62.5%;
+	}
+	.container {
+		max-width: 70rem;
+	}
+	.option-container {
+		padding: 1rem;
+		margin: 2rem 0;
+	}
+	.question  *{
+		font-size: 5rem;
+	}
+		#question {
+		font-size: 5rem;
+		margin-bottom: 5rem;
+	}
 }
