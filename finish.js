@@ -3,8 +3,22 @@
 const saveScoreBtn = document.querySelector("#saveScoreButton");
 const playerName = document.querySelector(".playername");
 const finalScore = document.querySelector(".finalscore");
+const thanks = document.querySelector(".thanks");
+const myComment = document.querySelector(".final-comment");
 
 const playerScore = localStorage.getItem("recentScore");
+
+if (playerScore < 40) {
+	thanks.innerText = `Olodo!!!!`
+	myComment.innerHTML = `Una no go school ni. <br> Olodo rabata silati lo mo je ko ni je paper silati lo mo je, shiiiooooorrr`;
+} else if(playerScore > 40 || playerScore < 65) {
+	thanks.innerText = `Congrats!!!`;
+	myComment.innerHTML = `You try small, make we no sing for Una. Go back to Primary 5`;
+} else {
+	thanks.innerText = `Congratulation!!!!`
+	myComment.innerHTML = `I dey say na una dey carry first your class, Tualee!!!`
+}
+
 finalScore.innerText = playerScore;
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];

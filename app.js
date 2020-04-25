@@ -13,22 +13,25 @@ const questionBonus = 10;
 const maxQuestions = 10;
 
 // Functions
+
 const fetchQuestions = async () => {
+	let difficulty = localStorage.getItem("difficulty");
+	let category = localStorage.getItem("category");
 	let response, data;
 	try {
-		response = await fetch(`https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple`);
+		response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
 		if(!response.ok) {
 			throw new Error(err)
 		}
 	}
 	catch(err) {
-		return err;
+		 console.log(err);
 	}
 
 	try {
 		data =  await response.json();
 		// Formats the question to my preffered question format
-		questions = data.results.map( question => {
+		window.questions = data.results.map( question => {
 			const correctQuestionFormat = {
 				question: question.question
 			};
@@ -52,7 +55,7 @@ const fetchQuestions = async () => {
 
 const startGame = () => {
 	// reset all the game parameters
-	availableQuestions = [...questions];
+	availableQuestions = [...window.questions];
 	// Creates a long lines for each questions
 	availableQuestions.forEach( question => {
 		const span = document.createElement("span");
@@ -83,7 +86,7 @@ const selectNewQuestion = () => {
 	// document.querySelector(".question-progress").style.width = `${(questionCounter / maxQuestions) * 100}`%
 
 	// Select a random question from the available question array
-	questionIndex = Math.floor(Math.random() * availableQuestions.length)
+	let questionIndex = Math.floor(Math.random() * availableQuestions.length)
 	currentQuestion = availableQuestions[questionIndex];
 	question.innerHTML = currentQuestion.question;
 

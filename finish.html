@@ -8,13 +8,20 @@
 <body>
 	<section class="container">
 		<div class="finish">
+			<h2>Quiz Result</h2>
+			<img src="" alt="" class="finalscore-image">
+			<h1 class="thanks"></h1>
+			<p class="final-comment"></p>
+			<p>YOUR SCORE</p>
 			<h1 class="finalscore"></h1>
 			<form>
 				<input type="text" name="playerName" placeholder="Please Enter Your Name" class="playername">
 				<button class="button" disabled id="saveScoreButton">Save Your Score</button>
 			</form>
-			<a class="button" href="game.html">Play Again</a>
-			<a class="button" href="index.html">Home</a>
+			<div class="controls finish-controls">
+				<a class="button home-btn" href="./index.html">Home</a>
+				<a class="button game-btn" href="./index.html">Play Again</a>
+			</div>
 		</div>
 	</section>
 	<script type="module" src="finish.js"></script>

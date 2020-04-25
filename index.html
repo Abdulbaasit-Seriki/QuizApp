@@ -5,13 +5,55 @@
 	<title>Quiz App</title>
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
-<body>
-	<div class="container">
+<body style="background-color: rgb(237, 243, 246);">
+	<div class="container hm-container" id="container">
 		<section class="homepage">
 			<h1>Quiz App</h1>
-			<a class="button" href="./game.html">Start</a>
-			<a class="button" href="./leaderboard.html">Leader Board</a>
+			<section class="categories">
+				<h2>Top Quiz Categories</h2>
+				<article  class="category" data-number="9">
+					General Knowledge
+				</article>
+				<article  class="category" data-number="11">
+					Movies
+				</article>
+				<article  class="category" data-number="12">
+					Music
+				</article>
+				<article  class="category" data-number="21">
+					Sports
+				</article>
+				<article  class="category" data-number="19">
+					Mathematics
+				</article>
+				<article  class="category" data-number="18">
+					Computer
+				</article>
+				<article  class="category" data-number="30">
+					Gadgets
+				</article>
+				<article  class="category" data-number=25>
+					Art
+				</article>
+			</section>
+			<section class="difficulty">
+				<h2>Difficulty</h2>
+				<article class="easy">
+					<p>Easy</p>
+				</article>
+				<article class="medium">
+					<p>Medium</p>
+				</article>
+				<article class="hard">
+					<p>Hard</p>
+				</article>
+			</section>
+			<div class="controls">
+				<a class="button" href="./leaderboard.html">Leader Board</a>
+				<a class="button start" href="./game.html">Start Quiz</a>
+			</div>
 		</section>
 	</div>
+	<script type="module" src="index.js"></script>
 </body>
 </html>
