@@ -3,7 +3,6 @@
 	font-size: 62.5%;
 }
 
-
 * {
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, san-serif;
@@ -16,6 +15,7 @@ body {
 	background-color: rgb(20, 26, 51);
 	height: 100vh;
 }
+
 h1 {
 	color: #56a5eb;
 	font-size: 5rem;
@@ -25,13 +25,12 @@ h1 {
 
 .container {
 	width: 100%;
-	/*height: 100vh;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 70rem;
 	margin: 0 auto;
-	padding: 5rem;
+	padding: 1rem;
+	font-size: 5rem;
 }
 
 .container > * {
@@ -45,25 +44,39 @@ h1 {
 	align-items: center;
 }
 
+.homepage h1 {
+	margin-top: 10rem;
+	font-size: 10rem;
+}
+
 .categories {
 	width: 100%;
 	display: grid;
-	grid-gap: 4rem;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 7rem;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 120px 120px 120px 120px 120px;
+	font-size: 7rem;
+	padding: 5rem;
 }
 
 .categories h2, .difficulty h2{
 	margin: 2rem 0 0 0;
 	grid-column: 1/-1;
-	font-size: 3rem;
+	font-size: 8rem;
 }
 
 .category, .difficulty article {
-	font-size: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 4rem;
 	border-radius: 5px;
 	background-color: white;
 	padding: 2rem;
 	transition:  all ease 1.2s;
+	text-align: center;
+	width: 100%;
 }
 
 .category:hover, .difficulty article:hover {
@@ -81,6 +94,9 @@ h1 {
 	display: grid;
 	grid-gap: 4rem;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 120px 120px 120px;
+	font-size: 5rem;
+	padding: 2rem;
 }
 
 .controls {
@@ -92,7 +108,7 @@ h1 {
 .button {
 	font-size: 1.5rem;
 	padding: 1rem;
-	width: 20rem;
+	width: 17rem;
 	text-align: center;
 	color: #56a5eb;
 	text-decoration: none;
@@ -102,6 +118,10 @@ h1 {
 }
 
 .start {
+	padding: 3rem;
+	width: 50%;
+	margin: 5rem;
+	font-size: 5rem;
 	background-color: rgb(217, 235, 238);
 	font-weight: bold;
 	border: none;
@@ -113,6 +133,10 @@ h1 {
 	box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 	transform: translateY(-0.2rem);
 	transition: transform 120s;
+}
+
+.fa {
+	text-align: center;
 }
 
 /*The game page*/
@@ -127,6 +151,7 @@ h1 {
 	align-items: center;
 	padding: 2rem;
 	grid-column: 1/-1;
+	padding: 5rem;
 }
 
 .current-question {
@@ -135,11 +160,11 @@ h1 {
 
 .option-container {
 	width: 100%;
-	font-size: 1.5rem;
 	border: 0.2rem solid rgba(170, 173, 186);
-	border-radius: 4px;
+	border-radius: 8px;
 	display: flex;
-	margin-bottom: 2.5rem;
+	padding: 0.5rem;
+	margin: 5rem 0;
 }
 
 .option-container:hover {
@@ -151,8 +176,13 @@ h1 {
 
 #question {
 	color: rgb(215, 217, 223);
-	font-size: 4rem;
+	font-size: 8rem;
+	margin-bottom: 4rem;
 }
+
+/*.question *{
+	font-size: 6rem;
+}*/
 
 .option-letter {
 	padding: 1.5rem 2.5rem;
@@ -162,9 +192,9 @@ h1 {
 
 .option-text {
 	width: 100%;
-	padding: 1.5rem;
+	padding: 4rem;
 	color: rgb(124, 128, 146);
-	font-size: 1.7rem;
+	font-size: 5rem;
 }
 
 .correct {
@@ -204,8 +234,7 @@ h1 {
 .question-progress {
 	display: inline-block;
 	height: 0.3rem;
-	background-color: #56a5eb;
-	/*width: 2%;*/
+	background-color: rgb(53, 55, 66);
 	margin: 0 2px;
 
 }
@@ -217,6 +246,7 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 3rem;
 }
 
 form {
@@ -243,6 +273,11 @@ input:focus {
 	color: rgb(215, 217, 223);
 }
 
+ .finish h1 {
+	font-size: 3rem;
+	margin-top: 2rem;
+}
+
 .finish h2 {
 	font-size: 3rem;
 }
@@ -264,6 +299,7 @@ input:focus {
 	padding: 1rem;
 	transition: all ease 1.2s;
 	font-weight: bolder;
+	width: 14rem;
 }
 
 .game-btn:hover {
@@ -276,6 +312,7 @@ input:focus {
 	border-radius: 5px;
 	border: none;
 	padding: 1rem;
+	width: 14rem;
 }
 
 .final-comment {
@@ -310,55 +347,33 @@ input:focus {
 }
 
 /*/*Media Queries**/
- @media screen and (max-width: 500px) {
+ @media screen and (max-width: 800px) {
 	 
 	.container {
-		padding: 1rem;
-		font-size: 5rem;
+		padding: 3rem;
+		max-width: 70rem;
 	}
 	.option-container {
-		padding: 0.5rem;
-		margin: 2rem 0 ;
+		font-size: 1.5rem;
+		margin-bottom: 2.5rem;
 	}
 	.option-text {
-		font-size: 1.8rem;
+		font-size: 1.7rem;
 	}
 	#question {
-		font-size: 3.5rem;
-		margin-bottom: 4rem;
-	}
-	.question *{
 		font-size: 4rem;
 	}
-	.categories, .difficulty {
-		 font-size: 5rem;
-	 }
-	.homepage h1 {
-		 margin-top: 3rem;
-	 }
 	 .categories, .difficulty {
-		 padding: 2rem;
-		 grid-template-columns: 1fr 1fr;
+		 grid-template-columns: 1fr 1fr 1fr;
 	 }
 	  .category, .difficulty article {
 		 font-size: 2rem;
 	 }
-	  .finish {
-		 padding: 3rem;
-	 }
 	 .button {
-		 width: 17rem
-	 }
-	 .game-btn, .home-btn {
-		 width: 14rem;
-	 }
-	  .finish h1 {
-		 font-size: 3rem;
-		 margin-top: 2rem;
+		 width: 20rem
 	 }
 }
-
-@media screen and (max-width: 800px) {
+/*@media screen and (max-width: 800px) {
 	* {
 		font-size: 62.5%;
 	}
@@ -382,5 +397,5 @@ input:focus {
 	}
 
 }
-
+*/
 

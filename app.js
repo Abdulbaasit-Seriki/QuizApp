@@ -60,8 +60,7 @@ const startGame = () => {
 	availableQuestions.forEach( question => {
 		const span = document.createElement("span");
 		span.classList.add("question-progress");
-		const width = document.querySelector(".scoredisplay").style.width;
-		span.style.width = `${(width / maxQuestions)}%`;
+		span.style.width = `${(93 / maxQuestions)}%`;
 		document.querySelector(".question-progress-bar").append(span);
 	});
 	score = 0;
@@ -129,7 +128,12 @@ for (let option of options) {
 
 		if (classToApply === "correct") {
 			incrementScore(questionBonus); 
+			// const progressCounter = [... document.querySelectorAll(".question-progress")];
+			// progressCounter[currentQuestion].style.backgroundColor = `rgb(12, 162, 7)`;
 		}
+		// else {
+		// 	progressCounter[currentQuestion].style.backgroundColor = `red`;
+		// }
 
 		selectNewQuestion();
 	});

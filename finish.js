@@ -1,4 +1,4 @@
-/* End page Functionality */
+/* End page Functionality */                
 
 const saveScoreBtn = document.querySelector("#saveScoreButton");
 const playerName = document.querySelector(".playername");
