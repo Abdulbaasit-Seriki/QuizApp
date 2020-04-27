@@ -52,6 +52,7 @@ const fetchQuestions = async () => {
 	}
 };
 
+const progressCounter = [];
 
 const startGame = () => {
 	// reset all the game parameters
@@ -62,6 +63,7 @@ const startGame = () => {
 		span.classList.add("question-progress");
 		span.style.width = `${(93 / maxQuestions)}%`;
 		document.querySelector(".question-progress-bar").append(span);
+		progressCounter.push(span);
 	});
 	score = 0;
 	questionCounter = 0;
@@ -128,13 +130,12 @@ for (let option of options) {
 
 		if (classToApply === "correct") {
 			incrementScore(questionBonus); 
-			// const progressCounter = [... document.querySelectorAll(".question-progress")];
-			// progressCounter[currentQuestion].style.backgroundColor = `rgb(12, 162, 7)`;
+			progressCounter[questionCounter - 1].style.backgroundColor = `rgb(12, 162, 7)`;
 		}
-		// else {
-		// 	progressCounter[currentQuestion].style.backgroundColor = `red`;
-		// }
-
+		else { 
+			progressCounter[questionCounter - 1].style.backgroundColor = `red`;
+		}
+                                  
 		selectNewQuestion();
 	});
 }
